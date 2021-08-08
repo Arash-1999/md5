@@ -83,7 +83,7 @@ const Md5 = () => {
   }
 
   return (
-    <>
+    <main>
       <Form
         value={input}
         handleChange={(e) => {setInput(e.target.value)}}
@@ -93,7 +93,7 @@ const Md5 = () => {
       {fixedLength.length % 512 === 0 ? <Length data={fixedLength} init={step4} /> : null}
       {buffer ? <Buffer buffer={buffer} process={step5} /> : null}
       {result ? <Result hash={result.result} steps={result.procedure} /> : null}
-    </>
+    </main>
   );
 }
 

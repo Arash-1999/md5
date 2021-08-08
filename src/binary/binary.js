@@ -1,14 +1,17 @@
 import React from "react";
 
+import Text from "./../components/text.js";
+import Btn from "./../components/btn.js";
+
 const Binary = (props) => {
 
   return (
     <section>
-      <p>in first step the input string have to convert to binary form</p>
-      <p>here is the binary form of "{props.value}"</p>
-      <p>{props.data.join(" ")}</p>
+      <Text>in first step the input string have to convert to binary form</Text>
+      <Text>here is the binary form of "{props.value}"</Text>
+      <Text code>{props.data.join(" ")}</Text>
 
-      <button onClick={props.addPadding}>add padding</button>
+      <Btn outline onClick={props.addPadding}>add padding</Btn>
     </section>
   );
 };
