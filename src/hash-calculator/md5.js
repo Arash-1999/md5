@@ -80,6 +80,7 @@ const md5 = (str) => {
 
   // calculating hash
   for(let i = 0, len = result.length / 512; i < len; i++ ){
+    procedure.push(i + 1);
     // copy (A, B, C, D) to new varaibels
     let X = [], block = result.slice(i << 9, (i + 1) << 9);
 
@@ -116,7 +117,7 @@ const md5 = (str) => {
     ], callback, K;
 
     for(let n = 0; n < 64; n++) {
-      procedure[n] = [parseInt(AA, 2), parseInt(BB, 2), parseInt(CC, 2), parseInt(DD, 2)]
+      procedure.push([parseInt(AA, 2), parseInt(BB, 2), parseInt(CC, 2), parseInt(DD, 2)]);
       let s, k;
 
       /*** declaring values depend on round number ***/
