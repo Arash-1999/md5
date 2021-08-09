@@ -2,7 +2,6 @@ import React from "react";
 
 import Text from "./../components/text.js";
 import Code from "./../components/code.js";
-import Btn from "./../components/btn.js";
 
 const Padded = (props) => {
   return (
@@ -11,7 +10,6 @@ const Padded = (props) => {
       <Text>since the length of input is <Code>{props.len}</Code> we sould append one "1" and <Code>{448 - 1 - (props.len % 512)}</Code> zeroes to fix the padding.</Text>
       <Text>the final result shoud like this: </Text>
       <Text code>{props.data}</Text>
-      <Btn outline onClick={props.init}>append length</Btn>
     </section>
   );
 }

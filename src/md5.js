@@ -8,6 +8,8 @@ import Length from "./length/length.js";
 import Buffer from "./buffer/buffer.js";
 import Result from "./result/result.js";
 
+import Btn from "./components/btn.js";
+
 import { md5 } from "./hash-calculator/md5.js";
 
 const Md5 = () => {
@@ -88,10 +90,30 @@ const Md5 = () => {
         value={input}
         handleChange={(e) => {setInput(e.target.value)}}
         handleSubmit={handleSubmit}/>
-      {bin ? <Binary addPadding={step2} data={bin} value={input} /> : null}
-      {padded.length >= 0 ? <Padded init={step3} len={padded.length} data={padded.data} /> : null}
-      {fixedLength.length % 512 === 0 ? <Length data={fixedLength} init={step4} /> : null}
-      {buffer ? <Buffer buffer={buffer} process={step5} /> : null}
+      {bin ? (
+        <>
+          <Binary data={bin} value={input} /> 
+          <Btn onClick={step2} outline>Add Padding</Btn>
+        </>
+        ): null}
+      {padded.length >= 0 ? (
+        <>
+          <Padded len={padded.length} data={padded.data} /> 
+          <Btn onClick={step3} outline>Append Length</Btn>
+        </>
+        ): null}
+      {fixedLength.length % 512 === 0 ? (
+        <>
+          <Length data={fixedLength} /> 
+          <Btn onClick={step4} outline>Initialize Buffer</Btn>
+        </>
+        ): null}
+      {buffer ? (
+          <>
+            <Buffer buffer={buffer} />
+            <Btn onClick={step5} outline>Process</Btn>
+          </>
+        ): null}
       {result ? <Result hash={result.result} steps={result.procedure} /> : null}
     </main>
   );

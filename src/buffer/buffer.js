@@ -2,7 +2,6 @@ import React from "react";
 
 import Text from "./../components/text.js";
 import Link from "./../components/link.js";
-import Btn from "./../components/btn.js";
 
 const Buffer = (props) => {
   return (
@@ -13,7 +12,6 @@ const Buffer = (props) => {
       <Text code>C : {props.buffer.C}</Text>
       <Text code>D : {props.buffer.D}</Text>
       <Text>also we define a <Link href="https://en.wikipedia.org/wiki/MD5#Pseudocode">list</Link> of number with sine function.</Text>
-      <Btn outline onClick={props.process} >Process</Btn>
     </section>
   );
 };

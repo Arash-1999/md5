@@ -1,7 +1,6 @@
 import React from "react";
 
 import Text from "./../components/text.js";
-import Btn from "./../components/btn.js";
 
 const Length = (props) => {
   return (
@@ -11,7 +10,6 @@ const Length = (props) => {
       <Text>and if the length of original input in binary form is greater than 2^64 we should use modulo to 2^64 instead of length.</Text>
       <Text>finally we divide it to two 32-bit word and append them in reverse order. so the final string should be like this: </Text>
       <Text code>{props.data}</Text>
-      <Btn outline onClick={props.init} >initialize buffer</Btn>
     </section>
   );
 }
