@@ -11,15 +11,16 @@ const FormContainer = styled.form`
   flex-direction: column;
   align-items: flex-start;
 `;
-const Label = styled(Text)`margin: 0;`;
+const Label_p = styled(Text)`margin: 0;`;
+const Label = Label_p.withComponent("label");
 
 const Form = (props) => {
 
   return (
     <FormContainer onSubmit={props.handleSubmit}>
-        <Label>your string: </Label>
-        <Textfield rows="10" cols="80" placeholder=" " value={props.value} onChange={props.handleChange}/>
-      <Btn type="submit">Start</Btn>
+        <Label htmlFor="input" >your string: </Label>
+        <Textfield id="input" rows="10" cols="80" placeholder=" " value={props.value} onChange={props.handleChange}/>
+      <Btn role="button" type="submit">Start</Btn>
     </FormContainer>
   );
 };

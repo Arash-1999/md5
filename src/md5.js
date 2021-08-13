@@ -93,25 +93,25 @@ const Md5 = () => {
       {bin ? (
         <>
           <Binary data={bin} value={input} /> 
-          <Btn onClick={step2} outline>Add Padding</Btn>
+          <Btn role="button" onClick={step2} outline>Add Padding</Btn>
         </>
         ): null}
       {padded.length >= 0 ? (
         <>
           <Padded len={padded.length} data={padded.data} /> 
-          <Btn onClick={step3} outline>Append Length</Btn>
+          <Btn role="button" onClick={step3} outline>Append Length</Btn>
         </>
         ): null}
       {fixedLength.length % 512 === 0 ? (
         <>
           <Length data={fixedLength} /> 
-          <Btn onClick={step4} outline>Initialize Buffer</Btn>
+          <Btn role="button" onClick={step4} outline>Initialize Buffer</Btn>
         </>
         ): null}
       {buffer ? (
           <>
             <Buffer buffer={buffer} />
-            <Btn onClick={step5} outline>Process</Btn>
+            <Btn role="button" onClick={step5} outline>Process</Btn>
           </>
         ): null}
       {result ? <Result hash={result.result} steps={result.procedure} /> : null}
